@@ -72,6 +72,7 @@ const User = () => {
                     <h5>{item.profile.lastName}</h5>
                     <p>{item.jobTitle}</p>
                   </div>
+                 
                 </div>
                 {/* Right */}
                 {
@@ -91,9 +92,11 @@ const User = () => {
                 </div>
                     )
                 }
+                
               </div>
             );
           })}
+         
         </div>
       </div>
     </>

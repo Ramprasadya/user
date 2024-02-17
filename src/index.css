@@ -3,5 +3,7 @@
 @tailwind utilities;
 
 *{
-    background-color: rgb(229, 215, 229);
+    margin: 0;
+    padding: 0;
+    background-color: rgba(246, 234, 246, 0.05);
 }
