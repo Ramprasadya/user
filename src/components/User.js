@@ -5,6 +5,7 @@ const User = () => {
   const [userData, setUserData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showDetail, setShowDetail] = useState(null)
+  const [error, setError] = useState("")
   let url = "https://602e7c2c4410730017c50b9d.mockapi.io/users";
 
   useEffect(() => {
@@ -18,8 +19,10 @@ const User = () => {
           console.log(data);
           setUserData(data);
           setIsLoading(false);
+          setError("")
         })
         .catch((err) => {
+          setError("No data to show")
           console.log("Fetch error:", err);
           setIsLoading(false);
         });
@@ -38,7 +41,7 @@ const User = () => {
 
   return (
     <>
-      <div className="  bg-violet-50">
+      <div className="  ">
         <h1 className="text-3xl font-bold mt-4 mb-6 text-center ">User Data</h1>
         <div>
           <div className="w-full flex justify-center my-4 " >
@@ -50,6 +53,7 @@ const User = () => {
             )}{" "}
           </div>
           <hr />
+          <span className="error text-center flex justify-center font-bold text-2xl  " >{error}</span>
           {userData.map((item, index) => {
             return (
               <div key={index} className="flex w-full ">
